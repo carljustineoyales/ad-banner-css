@@ -33,6 +33,7 @@
 }
 
 .banner__sections {
+  cursor: pointer;
   opacity: 0;
   height: 42px;
   position: relative;
