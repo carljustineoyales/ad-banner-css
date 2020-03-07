@@ -1,0 +1,271 @@
+:root {
+  --breathingAnimation: breathingEffect 1s infinite ease-in-out, ballPosition 1.5s infinite linear;
+  --logoWidth: 120px;
+}
+
+.banner {
+  max-height: 42px;
+  height: 42px;
+  background: url('./Assets/728x90_bg.jpg') no-repeat;
+  margin: auto;
+  width: 728px;
+  position: relative;
+
+  &__ball {
+    position: absolute;
+    width: 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(70px, -50%);
+    animation: var(--breathingAnimation)
+  }
+
+  &__logo {
+    position: absolute;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__sections {
+    opacity: 0;
+    height: 42px;
+    position: relative;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  &__section_item {
+    position: relative;
+    width: 80%;
+    opacity: 1;
+   
+
+    &:nth-child(1),
+    &:nth-child(4) {
+      width: 300px;
+      
+    }
+
+    &:nth-child(1) {
+      border-right: 1px solid orangered;
+    }
+
+    &:nth-child(2) {
+      border-right: 1px solid yellow;
+     
+    }
+
+    &:nth-child(3) {
+      border-left: 1px solid yellow;
+      
+    }
+
+    &:nth-child(4) {
+      border-left: 1px solid orangered;
+      
+    }
+  }
+
+  &__logo_section {
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__section_item_players {
+    opacity: 0;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -18%);
+    clip: auto;
+    &--rgb{
+      top: 50%;
+    left: 50%;
+    transform: translate(-50%, -58%);
+    }
+  }
+
+  &__section_item_paragraph,
+  &__section_item_paragraph--hidden {
+    position: absolute;
+    width: 100%;
+    color: white;
+    margin: 0 auto;
+    font-size: 8px;
+    top: 50%;
+  }
+  &__section_item_paragraph{
+    font-size: 12px;
+    transform: translateY(-50%);
+    transition: 0.5s ease;
+  }
+  &__section_item_paragraph--hidden {
+    opacity: 0;
+    font-size: 10px;
+    width: 238px;
+    padding: 0px 20px;
+    text-align: left;
+    transform: translateY(50%);
+    transition: 0.5s ease;
+  }
+  &__section_item_span{
+    color:yellow
+  }
+
+  &__section_container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    &--space_evenly{
+      justify-content: space-evenly;
+      align-items: center;
+    }
+  }
+
+  &__section_button {
+    background-color: orangered;
+    outline: 0;
+    border: none;
+    color: white;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+
+  &__section_item_note {
+    width: 42px;
+    display: block;
+  }
+
+  &:hover &__logo {
+    width: var(--logoWidth);
+    opacity: 0;
+    transition: 0.2s ease;
+    animation: logoDelay 1.5s ease-in;
+  }
+
+
+  &:hover &__ball {
+    animation: none;
+    animation-play-state: paused;
+    opacity: 0;
+    transition: 1.5s ease;
+  }
+
+  &:hover &__sections {
+    
+    transition: 0.5s;
+    transition-delay: 1.5s;
+    opacity: 1;
+  }
+
+  &__section_item{
+    &:hover &{
+      &_paragraph{
+        opacity: 0;
+        transform: translateY(-100%);
+        transition: 0.5s;
+        &--hidden{
+          opacity: 1;
+          transform: translateY(-50%);
+          transition: 0.5s;
+        }
+      }
+      &_players{
+        opacity: 0.5;
+        transition: 0.5s;
+      }
+    }
+  }
+
+}
+
+/**
+*
+*keyframe aniamtion
+*
+*/
+
+@keyframes breathingEffect {
+  0% {
+    opacity: 0.5;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  30% {
+    opacity: 0.5;
+  }
+
+  40% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ballPosition {
+  0% {
+    transform: translate(70px, -50%)
+  }
+
+  40% {
+    transform: translate(-200px, -30%)
+  }
+
+  80% {
+    transform: translate(-10px, -100%)
+  }
+
+  100% {
+    transform: translate(-10px, -100%)
+  }
+}
+
+@keyframes logoDelay {
+  0% {
+    opacity: 1;
+    width: 100px;
+  }
+
+  25% {
+    opacity: 1;
+    width: var(--logoWidth);
+  }
+
+  90% {
+    opacity: 1;
+    width: var(--logoWidth);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideUp{
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
