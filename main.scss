@@ -154,9 +154,11 @@
     top: 50%;
   }
   &__section_item_paragraph{
+    height:70%;
     font-size: 12px;
     transform: translateY(-50%);
     transition: 0.5s ease;
+    
   }
   &__section_item_paragraph--hidden {
     opacity: 0;
@@ -164,6 +166,7 @@
     width: 238px;
     padding: 0px 20px;
     text-align: left;
+    height: 0%;
     transform: translateY(-50%);
     transition: 0.5s ease;
   }
@@ -242,10 +245,12 @@
       &_paragraph{
         opacity: 0;
         // transform: translateY(-50%);
+        height: 0%;
         transition: 0.5s;
         &--hidden{
           opacity: 1;
           // transform: translateY(50%);
+          height: 100%;
           transition: 0.5s;
         }
       }

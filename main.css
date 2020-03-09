@@ -174,6 +174,7 @@
 }
 
 .banner__section_item_paragraph {
+  height: 70%;
   font-size: 12px;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
@@ -187,6 +188,7 @@
   width: 238px;
   padding: 0px 20px;
   text-align: left;
+  height: 0%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   -webkit-transition: 0.5s ease;
@@ -275,12 +277,14 @@
 
 .banner__section_item:hover .banner__section_item_paragraph {
   opacity: 0;
+  height: 0%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .banner__section_item:hover .banner__section_item_paragraph--hidden {
   opacity: 1;
+  height: 100%;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
